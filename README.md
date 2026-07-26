@@ -1,14 +1,59 @@
-# End-to-End-Motor-Insurance-Fraud-Detection-Pipeline
+# Motor Claim Fraud Command Center & Detection Pipeline
 
-Motor Claim Fraud Command Center & Detection PipelineAn end-to-end motor insurance fraud detection workflow built locally using Python, Pandas, scikit-learn, and Dash. The system processes claims, flags high-risk anomalies, provides human-interpretable explanations, and visualizes insights through a professional executive command center dashboard.Problem OverviewInsurance companies process thousands of motor accident claims every month. While the vast majority are genuine, a small percentage involve fraud, such as:Inflated Repair Costs: Repair estimates exceeding actual vehicle damage.Delayed Reporting: Intentional delays by customers to fabricate or prepare an accident narrative.Mismatched Data/PINs: Discrepancies between official postal registries and claimant locations.Exaggerated Injuries: Higher compensation requests driven by inflated medical or injury statements.
+An end-to-end motor insurance fraud detection workflow built locally using Python, Pandas, scikit-learn, and Dash. The system processes claims, flags high-risk anomalies, provides human-interpretable explanations, and visualizes insights through a professional executive command center dashboard.
 
-Even a small fraud rate of 1 to 2 percent leads to millions in annual financial losses.
-Traditional manual reviews often fail because investigators are overwhelmed with high claim volumes, lack systematic risk prioritization, and struggle with complex regional variations.What This Solution DoesThis project optimizes claim workflows by introducing automated intelligence:Fraud Scoring: Scores every claim for anomaly likelihood using machine learning models.Priority Queuing: High-risk claims automatically jump to the front of the review queue.Explainability: Generates human-interpretable reasons behind why a claim looks suspicious (e.g., late reporting delays, repair estimate inflation).
-Regional & Temporal Patterns: Surfaces fraud clusters, geographic hotspots, and coordinated spikes.AI Investigation Assistant: Integrates automated risk summaries to support rapid decision-making.Tech Stack UsedLayerTechnologies / ToolsLanguage & EnvironmentPython, Jupyter Notebooks, Google ColabData ProcessingPandas, NumPyMachine Learningscikit-learn (IsolationForest)Explainability & RulesCustom Rule-Based Reason SignalsVisualization & BIDash, Plotly (Local Interactive Command Center)AI AssistantAutomated LLM-based portfolio summary generationData Pipeline ArchitectureIngestion & Column Alignment: Loads raw claims datasets and standardizes structural keys securely.
-Feature Engineering & Enrichment: Computes metrics like reporting delays, repair cost ratios, and postal PIN validation signals.Model Scoring: Applies anomaly detection to generate precise numerical fraud scores and categorization.Decision Rules Engine: Maps risk thresholds directly to actionable operational decisions:< 0.50 (PASS): Low-risk claims processed automatically.0.50 - 0.70 (WATCH):
-Medium-risk claims flagged for monitoring.≥ 0.70 (REVIEW): High-risk claims routed straight to the investigation queue.Interactive Dash Command Center: Visualizes KPIs, state metrics, timeline trends, and granular details.Fraud Command Center Dashboard FeaturesExecutive KPI Summary: Tracks total booked claims, total flagged risk volumes, and overall portfolio percentage rates.State & Decision Filters: Isolates regional fraud patterns dynamically.Fraud Score Distribution & Timelines: Evaluates threshold alignment and sudden spikes in claim reports.High-Risk Investigation Table: Immediate entry point for auditors to inspect high-priority 
+## Problem Overview
 
-claims.Repository StructurePlaintextmotor-claim-fraud-command-center/
+Insurance companies process thousands of motor accident claims every month. While the vast majority are genuine, a small percentage involve fraud, such as:
+* **Inflated Repair Costs:** Repair estimates exceeding actual vehicle damage.
+* **Delayed Reporting:** Intentional delays by customers to fabricate or prepare an accident narrative.
+* **Mismatched Data/PINs:** Discrepancies between official postal registries and claimant locations.
+* **Exaggerated Injuries:** Higher compensation requests driven by inflated medical or injury statements.
+
+Even a small fraud rate of 1 to 2 percent leads to millions in annual financial losses. Traditional manual reviews often fail because investigators are overwhelmed with high claim volumes, lack systematic risk prioritization, and struggle with complex regional variations.
+
+## What This Solution Does
+
+This project optimizes claim workflows by introducing automated intelligence:
+* **Fraud Scoring:** Scores every claim for anomaly likelihood using machine learning models.
+* **Priority Queuing:** High-risk claims automatically jump to the front of the review queue.
+* **Explainability:** Generates human-interpretable reasons behind why a claim looks suspicious (e.g., late reporting delays, repair estimate inflation).
+* **Regional & Temporal Patterns:** Surfaces fraud clusters, geographic hotspots, and coordinated spikes.
+* **AI Investigation Assistant:** Integrates automated risk summaries to support rapid decision-making.
+
+## Tech Stack Used
+
+| Layer | Technologies / Tools |
+| :--- | :--- |
+| **Language & Environment** | Python, Jupyter Notebooks, Google Colab |
+| **Data Processing** | Pandas, NumPy |
+| **Machine Learning** | scikit-learn (`IsolationForest`) |
+| **Explainability & Rules** | Custom Rule-Based Reason Signals |
+| **Visualization & BI** | Dash, Plotly (Local Interactive Command Center) |
+| **AI Assistant** | Automated LLM-based portfolio summary generation |
+
+## Data Pipeline Architecture
+
+1. **Ingestion & Column Alignment:** Loads raw claims datasets and standardizes structural keys securely.
+2. **Feature Engineering & Enrichment:** Computes metrics like reporting delays, repair cost ratios, and postal PIN validation signals.
+3. **Model Scoring:** Applies anomaly detection to generate precise numerical fraud scores and categorization.
+4. **Decision Rules Engine:** Maps risk thresholds directly to actionable operational decisions:
+   * **`< 0.50` (PASS):** Low-risk claims processed automatically.
+   * **`0.50 - 0.70` (WATCH):** Medium-risk claims flagged for monitoring.
+   * **`≥ 0.70` (REVIEW):** High-risk claims routed straight to the investigation queue.
+5. **Interactive Dash Command Center:** Visualizes KPIs, state metrics, timeline trends, and granular details.
+
+## Fraud Command Center Dashboard Features
+
+* **Executive KPI Summary:** Tracks total booked claims, total flagged risk volumes, and overall portfolio percentage rates.
+* **State & Decision Filters:** Isolates regional fraud patterns dynamically.
+* **Fraud Score Distribution & Timelines:** Evaluates threshold alignment and sudden spikes in claim reports.
+* **High-Risk Investigation Table:** Immediate entry point for auditors to inspect high-priority claims.
+
+## Repository Structure
+
+```text
+motor-claim-fraud-command-center/
 ├── data/                      # Raw and processed CSV datasets
 ├── notebooks/                 # Processing, modeling, and AI assistant scripts
 ├── dashboard/                 # Dash application code and layout components
